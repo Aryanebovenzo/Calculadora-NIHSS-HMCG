@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora NIHSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.1);
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        h1 {
+            color: #6A1B9A;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        .score {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #43A047;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #6A1B9A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora NIHSS</h1>
+        <form id="nihssForm">
+            <div class="question">
+                <label>1a. Nível de consciência - Responsividade:
+                    <select name="q1a">
+                        <option value="0">0 - Alerta</option>
+                        <option value="1">1 - Sonolento</option>
+                        <option value="2">2 - Estuporoso</option>
+                        <option value="3">3 - Comatoso</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>1b. Nível de consciência - Perguntas:
+                    <select name="q1b">
+                        <option value="0">0 - Ambas corretas</option>
+                        <option value="1">1 - Uma correta</option>
+                        <option value="2">2 - Nenhuma</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>1c. Nível de consciência - Comandos:
+                    <select name="q1c">
+                        <option value="0">0 - Ambos corretos</option>
+                        <option value="1">1 - Um correto</option>
+                        <option value="2">2 - Nenhum</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>2. Olhos:
+                    <select name="q2">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Parcial</option>
+                        <option value="2">2 - Paralisia total</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>3. Campo visual:
+                    <select name="q3">
+                        <option value="0">0 - Sem perda</option>
+                        <option value="1">1 - Perda parcial</option>
+                        <option value="2">2 - Hemianopsia completa</option>
+                        <option value="3">3 - Cegueira cortical</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>4. Paralisia facial:
+                    <select name="q4">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Leve</option>
+                        <option value="2">2 - Parcial</option>
+                        <option value="3">3 - Completa</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>5a. Força braço esquerdo:
+                    <select name="q5a">
+                        <option value="0">0 - Sem queda</option>
+                        <option value="1">1 - Cai após 10s</option>
+                        <option value="2">2 - Cai antes de 10s</option>
+                        <option value="3">3 - Sem esforço contra gravidade</option>
+                        <option value="4">4 - Sem movimento</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>5b. Força braço direito:
+                    <select name="q5b">
+                        <option value="0">0 - Sem queda</option>
+                        <option value="1">1 - Cai após 10s</option>
+                        <option value="2">2 - Cai antes de 10s</option>
+                        <option value="3">3 - Sem esforço contra gravidade</option>
+                        <option value="4">4 - Sem movimento</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>6a. Força perna esquerda:
+                    <select name="q6a">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Cai após 5s</option>
+                        <option value="2">2 - Cai antes de 5s</option>
+                        <option value="3">3 - Sem esforço contra gravidade</option>
+                        <option value="4">4 - Sem movimento</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>6b. Força perna direita:
+                    <select name="q6b">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Cai após 5s</option>
+                        <option value="2">2 - Cai antes de 5s</option>
+                        <option value="3">3 - Sem esforço contra gravidade</option>
+                        <option value="4">4 - Sem movimento</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>7. Coordenação motora:
+                    <select name="q7">
+                        <option value="0">0 - Sem ataxia</option>
+                        <option value="1">1 - Um membro</option>
+                        <option value="2">2 - Dois membros</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>8. Linguagem:
+                    <select name="q8">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Leve/média afasia</option>
+                        <option value="2">2 - Afasia severa</option>
+                        <option value="3">3 - Mudez</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>9. Disartria:
+                    <select name="q9">
+                        <option value="0">0 - Normal</option>
+                        <option value="1">1 - Leve a moderada</option>
+                        <option value="2">2 - Severa</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <label>10. Extinção/inatenção (negligência):
+                    <select name="q10">
+                        <option value="0">0 - Nenhuma</option>
+                        <option value="1">1 - Uma modalidade</option>
+                        <option value="2">2 - Duas ou mais modalidades</option>
+                    </select>
+                </label>
+            </div>
+            <div class="question">
+                <button type="button" onclick="calcular()">Calcular NIHSS</button>
+            </div>
+        </form>
+        <div class="score" id="resultado">Total: 0</div>
+    </div>
+    <script>
+        function calcular() {
+            const form = document.getElementById('nihssForm');
+            let total = 0;
+            for (let element of form.elements) {
+                if (element.type === 'select-one') {
+                    total += parseInt(element.value);
+                }
+            }
+            document.getElementById('resultado').innerText = 'Total: ' + total;
+        }
+    </script>
+</body>
+</html>
